@@ -8,6 +8,7 @@ class Cc2flaceliereApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

@@ -1,9 +1,13 @@
 package ff.CC2flaceliere;
 
+import ff.CC2flaceliere.model.StatePaiementUser;
+import ff.CC2flaceliere.model.TypeUser;
+import ff.CC2flaceliere.model.User;
+
 public final class actionOnMember {
 
 
-    static UpdatedCustomer updateStateOfCustomer(User admin, User customer, TypeUser typeUser) {
+    public static UpdatedCustomer updateStateOfCustomer(User admin, User customer, TypeUser typeUser) {
     if(isAdmin(admin)) {
         customer.setTypeUser(typeUser);
         return UpdatedCustomer.USER_UPDATED;
@@ -12,7 +16,7 @@ public final class actionOnMember {
     return UpdatedCustomer.USER_NOT_UPDATED;
     }
 
-    static UpdatedCustomer updatePaiementOfCustomer(User customer) {
+    public static UpdatedCustomer updatePaiementOfCustomer(User customer) {
         if(ValidationAddressEngine.getInstance().isValidateAddress(customer.getAddress())) {
             customer.setStatePaiementUser(StatePaiementUser.CAN_PAY);
             return UpdatedCustomer.USER_UPDATED;

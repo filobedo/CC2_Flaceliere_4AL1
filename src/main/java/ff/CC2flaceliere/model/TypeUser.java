@@ -1,4 +1,4 @@
-package ff.CC2flaceliere;
+package ff.CC2flaceliere.model;
 
 public enum TypeUser {
     USER_ADMIN,

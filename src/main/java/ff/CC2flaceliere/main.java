@@ -1,5 +1,8 @@
 package ff.CC2flaceliere;
 
+import ff.CC2flaceliere.model.Address;
+import ff.CC2flaceliere.model.TypeUser;
+import ff.CC2flaceliere.model.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,30 +16,34 @@ import java.util.InvalidPropertiesFormatException;
 //public class main {
 //    public static void main(String[] args) throws InvalidPropertiesFormatException {
 //
-//        final User tradesMan = new User(1, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_NEW_TRADESMAN, new Address(1, "Paris", 10, "Tourcoin street"));
-//        final User contractor = new User(2, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_NEW_CONTRACTOR, new Address(1, "Paris", 10, "Tourcoin street"));
-//
-//        final User userAdmin = new User(3, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_ADMIN, new Address(1, "Paris", 10, "Tourcoin street"));
-//
-//
-//        System.out.println(tradesMan.getTypeUser());
-//        System.out.println(tradesMan.getStatePaiementUser());
-//        System.out.println("-----------");
-//
-//        actionOnMember.updateStateOfCustomer(userAdmin, tradesMan, TypeUser.USER_TRADESMAN);
-//        actionOnMember.updatePaiementOfCustomer(tradesMan);
-//
-//        System.out.println(tradesMan.getTypeUser());
-//        System.out.println(tradesMan.getStatePaiementUser());
-//
-//
+
+
 //    }
 //}
 //
 @SpringBootApplication
 public class main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidPropertiesFormatException {
+
+        final User tradesMan = new User(1, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_NEW_TRADESMAN, new Address(1, "Paris", 10, "Tourcoin street"));
+        final User contractor = new User(2, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_NEW_CONTRACTOR, new Address(1, "Paris", 10, "Tourcoin street"));
+
+        final User userAdmin = new User(3, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_ADMIN, new Address(1, "Paris", 10, "Tourcoin street"));
+
+
+        System.out.println(tradesMan.getTypeUser());
+        System.out.println(tradesMan.getStatePaiementUser());
+        System.out.println("-----------");
+
+        actionOnMember.updateStateOfCustomer(userAdmin, tradesMan, TypeUser.USER_TRADESMAN);
+        actionOnMember.updatePaiementOfCustomer(tradesMan);
+
+        System.out.println(tradesMan.getTypeUser());
+        System.out.println(tradesMan.getStatePaiementUser());
+
+
+
         SpringApplication.run(main.class, args);
     }
 

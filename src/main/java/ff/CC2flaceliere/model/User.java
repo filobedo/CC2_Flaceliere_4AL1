@@ -1,12 +1,11 @@
-package ff.CC2flaceliere;
+package ff.CC2flaceliere.model;
 
 import java.util.InvalidPropertiesFormatException;
 //import  org.springframework.context;
-import org.springframework.boot.CommandLineRunner;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+@Component
 public class User {
     private final int id;
     private final String firstName;

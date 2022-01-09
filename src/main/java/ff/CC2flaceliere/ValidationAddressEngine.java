@@ -2,6 +2,7 @@ package ff.CC2flaceliere;
 
 import java.util.function.Predicate;
 import ff.CC2flaceliere.kernel.Engine;
+import ff.CC2flaceliere.model.Address;
 
 @Engine
 public class ValidationAddressEngine implements Predicate<Address> {
