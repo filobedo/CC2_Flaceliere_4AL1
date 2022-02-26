@@ -13,7 +13,7 @@ public class UserConfig {
 
     @Bean
     public Address getAddress() throws InvalidPropertiesFormatException {
-        return new Address(1, "Paris", 10, "Tourcoin street");
+        return new Address(1, "Paris", 10, "Tourcoin street","France");
     }
 
     @Bean
@@ -35,6 +35,6 @@ public class UserConfig {
         return StatePaiementUser.CAN_NOT_PAY;
     }
 
-
-
+    @Bean
+    public Skills getSkills() {return new Skills(4,"France");}
 }

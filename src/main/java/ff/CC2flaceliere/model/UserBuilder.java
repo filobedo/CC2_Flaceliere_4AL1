@@ -11,6 +11,7 @@ public final class UserBuilder {
     private String password;
     private TypeUser typeUser;
     private Address address;
+    private Skills skill;
 
     public UserBuilder() {
     }
@@ -58,9 +59,13 @@ public final class UserBuilder {
         this.address = address;
         return this;
     }
+    public UserBuilder withSkill(Skills skill) {
+        this.skill = skill;
+        return this;
+    }
 
     public User build() throws InvalidPropertiesFormatException {
-        User user = new User(id, firstName, lastName, mail, password, typeUser, address);
+        User user = new User(id, firstName, lastName, mail, password, typeUser, address,skill);
         user.setStatePaiementUser(statePaiementUser);
         return user;
     }

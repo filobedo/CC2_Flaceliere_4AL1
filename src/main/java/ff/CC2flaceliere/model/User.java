@@ -15,10 +15,13 @@ public class User {
     private TypeUser typeUser;
     private final Address address;
     private StatePaiementUser statePaiementUser;
+    private boolean available;
+    private Skills skill;
 
 
 
-    public User(int id, String firstName, String lastName, String mail, String password, TypeUser typeUser, Address address) throws InvalidPropertiesFormatException {
+
+    public User(int id, String firstName, String lastName, String mail, String password, TypeUser typeUser, Address address, Skills skill) throws InvalidPropertiesFormatException {
         if (!isValideEmailAddress(mail)) {
             throw new InvalidPropertiesFormatException("Invalid email address");
         }
@@ -30,6 +33,8 @@ public class User {
         this.typeUser = typeUser;
         this.address = address;
         this.statePaiementUser = StatePaiementUser.CAN_NOT_PAY;
+        this.available = true;
+        this.skill = skill;
     }
 
     public boolean isValideEmailAddress(String address) {
@@ -88,4 +93,15 @@ public class User {
         this.typeUser = typeUser;
     }
 
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public Skills getSkill() {
+        return skill;
+    }
 }

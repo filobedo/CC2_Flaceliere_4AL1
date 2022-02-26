@@ -28,7 +28,7 @@ public class UserTests {
                 .withMail("frederic.flaceliere@gmail.com")
                 .withPassword("toto")
                 .withTypeUser(TypeUser.USER_NEW_CONTRACTOR)//1, "Paris", 10, "Tourcoin street"
-                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin"))
+                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin","France"))
                 .build();
 
         final User tradesMan = new UserBuilder()
@@ -38,7 +38,7 @@ public class UserTests {
                 .withMail("frederic.flaceliere@gmail.com")
                 .withPassword("toto")
                 .withTypeUser(TypeUser.USER_NEW_TRADESMAN)
-                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin"))
+                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin","France"))
                 .build();
 
         final User userAdmin = new UserBuilder()
@@ -48,7 +48,7 @@ public class UserTests {
                 .withMail("frederic.flaceliere@gmail.com")
                 .withPassword("toto")
                 .withTypeUser(TypeUser.USER_ADMIN)
-                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin"))
+                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin","France"))
                 .build();
 
         System.out.println(tradesMan.getTypeUser());

@@ -1,8 +1,7 @@
 package ff.CC2flaceliere;
 
-import ff.CC2flaceliere.model.Address;
-import ff.CC2flaceliere.model.TypeUser;
-import ff.CC2flaceliere.model.User;
+import ff.CC2flaceliere.Data.ProjectsData;
+import ff.CC2flaceliere.model.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,10 +25,36 @@ public class main {
 
     public static void main(String[] args) throws InvalidPropertiesFormatException {
 
-        final User tradesMan = new User(1, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_NEW_TRADESMAN, new Address(1, "Paris", 10, "Tourcoin street"));
-        final User contractor = new User(2, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_NEW_CONTRACTOR, new Address(1, "Paris", 10, "Tourcoin street"));
+        final Project project1 = new Project(1,new Skills(6,"France"),"projet 1");
+        ProjectsData.addProject(project1);
+        final User tradesMan = new UserBuilder()
+                .withId(1)
+                .withFirstName("Fred")
+                .withLastName("Fla")
+                .withMail("frederic.flaceliere@gmail.com")
+                .withPassword("toto")
+                .withTypeUser(TypeUser.USER_NEW_CONTRACTOR)
+                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin","France"))
+                .build();
+        final User contractor = new UserBuilder()
+                .withId(2)
+                .withFirstName("Fred")
+                .withLastName("Fla")
+                .withMail("frederic.flaceliere@gmail.com")
+                .withPassword("toto")
+                .withTypeUser(TypeUser.USER_NEW_CONTRACTOR)
+                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin","France"))
+                .build();
 
-        final User userAdmin = new User(3, "Fred", "Fla", "fred@gmail.com", "toto", TypeUser.USER_ADMIN, new Address(1, "Paris", 10, "Tourcoin street"));
+        final User userAdmin = new UserBuilder()
+                .withId(3)
+                .withFirstName("Fred")
+                .withLastName("Fla")
+                .withMail("frederic.flaceliere@gmail.com")
+                .withPassword("toto")
+                .withTypeUser(TypeUser.USER_ADMIN)
+                .withAddress(AddressFactory.GetAddress(1, "Paris", 10, "Tourcoin","France"))
+                .build();
 
 
         System.out.println(tradesMan.getTypeUser());

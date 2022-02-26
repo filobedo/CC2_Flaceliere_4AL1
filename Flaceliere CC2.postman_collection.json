@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c487ff95-a3d4-404f-98fd-f1f337280cd0",
+		"_postman_id": "a66de52e-fb0e-4aa9-b1a6-84e6d1e54544",
 		"name": "Flaceliere CC2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -166,6 +166,108 @@
 					"path": [
 						"user",
 						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Best Tradesman",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"experienceyear\": 5,\r\n  \"country\": \"france\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/besttradesman",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"besttradesman"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign Tradesman to Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"trademanid\":1,\r\n  \"projectid\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/projectassign",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"projectassign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endProject",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"projectid\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/closeproject",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"closeproject"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProjects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/projects",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"projects"
 					]
 				}
 			},

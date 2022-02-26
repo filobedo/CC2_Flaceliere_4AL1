@@ -7,6 +7,7 @@ public final class AddressBuilder {
     private String city;
     private int number;
     private String street;
+    private String country;
 
     public AddressBuilder() {
     }
@@ -35,7 +36,12 @@ public final class AddressBuilder {
         return this;
     }
 
+    public AddressBuilder withCountry(String country) {
+        this.country = country;
+        return this;
+    }
+
     public Address build() throws InvalidPropertiesFormatException {
-        return new Address(id, city, number, street);
+        return new Address(id, city, number, street,country);
     }
 }

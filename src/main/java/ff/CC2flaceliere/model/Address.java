@@ -8,9 +8,10 @@ public final class Address {
     private final String city;
     private final int number;
     private final String street;
+    private final String country;
 
 
-    public Address(int id, String city, int number, String street) throws InvalidPropertiesFormatException {
+    public Address(int id, String city, int number, String street, String country) throws InvalidPropertiesFormatException {
 
         if (!checkStreetNumber(number)) {
             throw new InvalidPropertiesFormatException("Invalid street number");
@@ -20,6 +21,7 @@ public final class Address {
         this.city = city;
         this.number = number;
         this.street = street;
+        this.country = country;
     }
 
     public int getId() {
